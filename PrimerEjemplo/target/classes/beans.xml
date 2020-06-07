@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<bean id="saludator" class="com.openwebinars.spring.Saludator">
-		<property name="mensaje" value="Hola buenas tardes que tal"></property>
+		<constructor-arg value="Hola buenas tardes que tal"></constructor-arg>
 	</bean>
 
 </beans>
