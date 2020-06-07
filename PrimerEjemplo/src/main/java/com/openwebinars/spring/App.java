@@ -16,7 +16,12 @@ public class App {
 		
 		saludador = appContext.getBean(Saludator.class);
 		
-		System.out.print(saludador.saludo());
+		System.out.print(saludador.saludo() + "\n");
+		
+		EmailService es = null;
+		
+		es = appContext.getBean(EmailService.class);
+		es.enviarEmailSaludo("daviddiazh97@gmail.com");
 		
 		((ClassPathXmlApplicationContext) appContext).close();	
 	}
