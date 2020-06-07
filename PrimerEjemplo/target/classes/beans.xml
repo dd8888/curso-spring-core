@@ -4,11 +4,11 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	
-	<bean id="emailService" class="com.openwebinars.spring.EmailService">
-		<property name ="saludator" ref="saludator"></property>
+	<bean id="emailService" class="com.openwebinars.spring.EmailService" autowire="byType">
+		
 	</bean>
 	
-	<bean id="saludator" class="com.openwebinars.spring.Saludator">
+	<bean id="saludator" class="com.openwebinars.spring.Saludator" autowire-candidate="default">
 		<constructor-arg value="Hola buenas tardes que tal"></constructor-arg>
 	</bean>
 
