@@ -8,6 +8,7 @@ public class EmailService {
 		return saludator;
 	}
 
+	
 	public void setSaludator(Saludator saludator) {
 		this.saludator = saludator;
 	}

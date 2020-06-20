@@ -16,7 +16,6 @@ public class App {
 		
 		saludador = appContext.getBean(Saludator.class);
 		
-		System.out.print(saludador.saludo() + "\n");
 		
 		EmailService es = null;
 		
