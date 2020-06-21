@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -19,7 +21,7 @@ public class FilmDaoImplMemory implements FilmDao {
 	@Autowired
 	private AppConfig appConfig;
 	
-	
+	@PostConstruct
 	public void init() {
 		peliculas = UtilFilmFileReader.readFile(appConfig.getFile(), appConfig.getSeparator(), appConfig.getList_separator());
 		
@@ -50,8 +52,9 @@ public class FilmDaoImplMemory implements FilmDao {
 	}
 
 	public void delete(long id) {
-		// TODO Auto-generated method stub
-
+		int index = getIndexOf(id);
+		if(index != -1)
+			peliculas.remove(index);
 	}
 	
 	private int getIndexOf(long id) {
